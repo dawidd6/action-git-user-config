@@ -1,23 +1,13 @@
-# Hello world JavaScript action
+# Git user config Github Action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log. To learn how this action was built, see "[Creating a JavaScript action](https://help.github.com/en/articles/creating-a-javascript-action)" in the GitHub Help documentation.
+An action that globally configures git for specified GitHub user.
 
-## Inputs
-
-### `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
-
-## Outputs
-
-### `time`
-
-The time we greeted you.
-
-## Example usage
+## Usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@main
-with:
-  who-to-greet: 'Mona the Octocat'
+- name: Configure git
+  uses: dawidd6/action-git-user-config@v1
+  with:
+    # Defaults to $GITHUB_ACTOR if not specified
+    username: BrewTestBot
 ```

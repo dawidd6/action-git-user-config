@@ -1,13 +1,23 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: Configure git for a user
+description: Configure user's name and email globally for git
+author: dawidd6
+branding:
+  icon: user
+  color: green
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+  token:
+    description: GitHub token
+    required: false
+    default: ${{github.token}}
+  username:
+    description: GitHub username
+    required: false
+    default: ${{github.actor}}
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  name:
+    description: Configured git user's name
+  email:
+    description: Configured git user's email
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: node12
+  main: main.js
